@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
         trim: true,
         lowercase: true,
         minLength: [10, 'Email must be atleast 10 characters long'],
-        minLength: [50, 'Email must be less than 10 characters long']
+        maxLength: [50, 'Email must be less than 50 characters long']
     },
     password: {
         type: String,
@@ -27,7 +27,7 @@ userSchema.methods.isValidPassword = async function(password){
 }
 
 userSchema.methods.generateJWT = function(){
-    return jwt.sign({email: this.email}, process.env.JWT_SECRET);
+    return jwt.sign({email: this.email}, process.env.JWT_SECRET, { expiresIn: '24h' });
 }
 
 const User = mongoose.model('user', userSchema);
