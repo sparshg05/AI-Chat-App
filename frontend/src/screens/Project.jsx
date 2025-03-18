@@ -80,14 +80,12 @@ const Project = () => {
     }
 
     const send = () => {
-
         sendMessage('project-message', {
             message,
             sender: user
-        })
+        });
         setMessages(prevMessages => [ ...prevMessages, { sender: user, message } ]) // Update messages state
-        setMessage("")
-
+        setMessage("");
     }
 
     function WriteAiMessage(message) {
@@ -138,9 +136,8 @@ const Project = () => {
                     setFileTree(message.fileTree || {})
                 }
                 setMessages(prevMessages => [ ...prevMessages, data ]) // Update messages state
-            } else {
-
-
+            }
+            else{
                 setMessages(prevMessages => [ ...prevMessages, data ]) // Update messages state
             }
         })

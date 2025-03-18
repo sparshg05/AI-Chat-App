@@ -24,7 +24,7 @@ export const createProject = async({name,userId}) => {
     return project;
 }
 
-export const getAllProjects = async(userId) => {
+export const getAllProjects = async({userId}) => {
     if(!userId){
         throw new Error('User is required');
     }

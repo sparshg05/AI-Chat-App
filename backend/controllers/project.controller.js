@@ -38,7 +38,7 @@ export const getAllProjects = async (req, res) => {
             email: req.user.email
         })
 
-        const allUserProjects = await projectService.getAllProjectByUserId({
+        const allUserProjects = await projectService.getAllProjects({
             userId: loggedInUser._id
         })
 
@@ -68,7 +68,7 @@ export const addUserToProject = async (req, res) => {
         })
 
 
-        const project = await projectService.addUsersToProject({
+        const project = await projectService.addUserToProject({
             projectId,
             users,
             userId: loggedInUser._id
