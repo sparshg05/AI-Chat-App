@@ -14,7 +14,12 @@ const app = express();
 
 const _dirname = path.resolve();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://ai-chat-app-3e0k.onrender.com',
+    credentials: true,
+}
+
+app.use(cors(corsOptions));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
