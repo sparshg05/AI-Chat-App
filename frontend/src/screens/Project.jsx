@@ -5,22 +5,20 @@ import axios from '../config/axios'
 import { initializeSocket, receiveMessage, sendMessage } from '../config/socket'
 import Markdown from 'markdown-to-jsx'
 import hljs from 'highlight.js';
-import { getWebContainer } from '../config/webcontainer'
+import { getWebContainer } from '../config/webContainer.js'
+import 'highlight.js/styles/github.css'; // Import the CSS for syntax highlighting
 
 
 function SyntaxHighlightedCode(props) {
-    const ref = useRef(null)
+    const ref = useRef(null);
 
     React.useEffect(() => {
-        if (ref.current && props.className?.includes('lang-') && window.hljs) {
-            window.hljs.highlightElement(ref.current)
-
-            // hljs won't reprocess the element unless this attribute is removed
-            ref.current.removeAttribute('data-highlighted')
+        if (ref.current && props.className?.includes('lang-') && hljs) {
+            hljs.highlightElement(ref.current); // Highlight the code block
         }
-    }, [ props.className, props.children ])
+    }, [props.className, props.children]);
 
-    return <code {...props} ref={ref} />
+    return <code {...props} ref={ref} />;
 }
 
 
@@ -361,7 +359,7 @@ const Project = () => {
                                                 setFileTree(ft)
                                                 saveFileTree(ft)
                                             }}
-                                            dangerouslySetInnerHTML={{ __html: hljs.highlight('javascript', fileTree[ currentFile ].file.contents).value }}
+                                            dangerouslySetInnerHTML={{ __html: hljs.highlightAuto(fileTree[ currentFile ]?.file?.contents || '').value }}
                                             style={{
                                                 whiteSpace: 'pre-wrap',
                                                 paddingBottom: '25rem',
