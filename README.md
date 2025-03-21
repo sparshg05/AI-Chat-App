@@ -22,20 +22,23 @@ AI Chat App is a full-stack web application that enables real-time interactions 
 
 ### Frontend:
 
-React.js (Vite)
+→ React.js (Vite)
 
-Axios
+→ Axios
 
-Tailwind CSS
+→ Tailwind CSS
 
 ### Backend:
 
-Node.js with Express.js
+→ Node.js with Express.js
 
-WebSockets (socket.io) for real-time communication
+→ WebSockets (socket.io) for real-time communication
 
-MongoDB with Mongoose ORM
+→ MongoDB with Mongoose ORM
 
-JWT Authentication
+→ JWT Authentication
 
-WebContainer API for browser-based execution
+→ WebContainer API for browser-based execution
+
+### Deployment:
+→ Deployed on Render serving all the frontend files from backend.
