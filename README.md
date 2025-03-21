@@ -12,8 +12,30 @@ AI Chat App is a full-stack web application that enables real-time interactions 
 
 3. Refined prompt engineering to create even express server also with a basic file structure.
 
-4. WebContainer utilisation to run the node server on the browser itself for routes testing.
+4. WebContainer Support for running server in the browser
 
 5. Fast & Scalable API (Built with Express.js & MongoDB)
 
 6. Deployed on Render for seamless accessibility
+
+## 🛠️ Tech Stack
+
+### Frontend:
+
+React.js (Vite)
+
+Axios
+
+Tailwind CSS
+
+### Backend:
+
+Node.js with Express.js
+
+WebSockets (socket.io) for real-time communication
+
+MongoDB with Mongoose ORM
+
+JWT Authentication
+
+WebContainer API for browser-based execution
