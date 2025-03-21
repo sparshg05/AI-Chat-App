@@ -1,10 +1,10 @@
-### AI Chat App
+# AI Chat App
 
-# 🚀 Project Overview
+## 🚀 Project Overview
 
 AI Chat App is a full-stack web application that enables real-time interactions with AI-powered chat models. This project is built using React for the frontend and Node.js (Express) for the backend, with MongoDB as the database.
 
-# 🌟 Features
+## 🌟 Features
 
 1. User Authentication (Signup/Login with JWT & Cookies)
 
