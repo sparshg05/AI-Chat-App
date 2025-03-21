@@ -14,6 +14,13 @@ const app = express();
 
 const _dirname = path.resolve();
 
+// Cross-Origin Isolation headers
+app.use((req, res, next) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+    next();
+});
+
 const corsOptions = {
     origin: 'https://ai-chat-app-3e0k.onrender.com',
     credentials: true,
